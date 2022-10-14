@@ -1,0 +1,25 @@
+---
+import BuyingGuides from "./BuyingGuides.astro";
+import Deals from "./Deals.astro";
+import Gold from "./Gold.astro";
+import LatestTrends from "./LatestTrends.astro";
+
+
+---
+<section class="categories">
+    <div class="container">
+        <BuyingGuides/>
+        <Deals/>
+        <LatestTrends/>
+        <Gold/>
+    </div>
+</section>
+
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.111rem;
+
+    }
+</style>

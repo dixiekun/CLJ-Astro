@@ -1,0 +1,28 @@
+---
+import Logo from './Logo.astro'
+import Nav from './Nav.astro';
+---
+
+<header>
+    <div class="container">
+        <a href="/"><Logo siteTitle="Cuban Link Jewelry"/></a>
+        <Nav />
+    </div>
+</header>
+
+<style lang="scss">
+    header {
+        padding: 0.889rem 0 0.889rem 0;
+        background: rgba(196, 196, 196, 0.22);
+        border-bottom: 1px solid rgba(242, 242, 242, 0.8);
+        backdrop-filter: blur(4px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .container {
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>

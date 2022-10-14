@@ -1,0 +1,54 @@
+---
+import Contact from "./Contact.astro";
+import FooterLogo from "./FooterLogo.astro";
+import Newsletter from "./Newsletter.astro";
+import UsefulLinks from "./UsefulLinks.astro";
+import footerBg from "../../images/footer-bg.png"
+
+---
+<footer class="footer" style={`background-image: url(${footerBg})`}>
+    <div class="container flex-col">
+        <div class="line-separator"></div>
+        <div class="wrapper">
+            <div class="divider">
+                <Contact/>
+                <UsefulLinks/>
+                <Newsletter/>
+            </div>
+            <FooterLogo/>
+        </div>
+
+    </div>
+    
+</footer>
+
+<style lang="scss">
+    .footer {
+        height: 41.833rem;
+        color: white;
+        display: grid;
+        place-items: center;
+        margin-top: 5.333rem;
+
+        .line-separator {
+            margin: 0 0 1.75rem 0;
+            background-color: hwb(0deg 68% 32% / 50%);
+        }
+
+        .wrapper {
+            display: flex;
+            background: rgba(196, 196, 196, 0.22);
+            border: 1px solid rgba(242, 242, 242, 0.8);
+            backdrop-filter: blur(4px);
+            border-radius: 0.556rem;
+            padding: 2.222rem 3.333rem;
+            flex-direction: column;
+            gap: 4rem;
+
+            .divider {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(20.278rem, 1fr));
+            }
+        }
+    }
+</style>

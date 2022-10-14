@@ -1,0 +1,14 @@
+---
+const {sitename} = Astro.props
+const d = new Date();
+let year = d.getFullYear()
+---
+
+
+<p class="text-xs">© {year} {sitename} All rights reserved.</p>
+
+<style>
+    p {
+        color: #9E9E9E;
+    }
+</style>

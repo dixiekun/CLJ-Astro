@@ -1,0 +1,13 @@
+---
+import InfiniteSlider from "./InfiniteSlider.astro";
+
+const {title="Latest Blog"} = Astro.props
+---
+
+<section class="latest-posts">
+    <div class="container flex flex-col">
+        <h2>{title}</h2>
+        <div class="line-separator"></div>
+    </div>
+    <InfiniteSlider/>
+</section>

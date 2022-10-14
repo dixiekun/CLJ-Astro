@@ -1,0 +1,59 @@
+@import './reset.scss', './colors.scss', './fonts.scss';
+
+body, :root {
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #EEEEEE;
+}
+
+h1 {
+    font-family: "Emblema One";
+    font-size: 5.333rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.667rem;
+    line-height: 4rem;
+}
+
+h3 {
+    font-size: 1.778rem;
+    font-weight: 700;
+}
+
+section {
+    margin-top: 5.333rem;
+}
+
+.container {
+    width: 1280px;
+    margin: 0 auto;
+    display: flex;
+}
+
+button {
+    &.btn-subscribe {
+        background-color: $CLJ-Primary-400;
+        border-radius: 50px;
+        width: 150px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        font-weight: 600;
+        line-height: 1.444rem;
+        
+    }
+
+}
+
+.line-separator {
+    height: 2px;
+    width: 100%;
+    background-color: #FAFAFA;
+    margin: 1.333rem auto 4rem;
+}

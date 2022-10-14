@@ -1,0 +1,33 @@
+---
+import fb_icon from '../../images/icons/fb_icon.svg'
+import ig_icon from '../../images/icons/ig_icon.svg'
+import twitter_icon from '../../images/icons/twitter_icon.svg'
+
+const socialData = [
+    {
+        name: 'facebook',
+        iconUrl: fb_icon
+    },
+    {
+        name: 'instagram',
+        iconUrl: ig_icon
+    },
+    {
+        name: 'twitter',
+        iconUrl: twitter_icon
+    }
+]
+---
+<ul class="social-icons">
+    {socialData.map(social => (
+        <li><a href="#"><img src={social.iconUrl} alt={social.name}></a></li>
+    ))}
+</ul>
+
+
+<style lang="scss">
+    ul.social-icons {
+        display: flex;
+        gap: 2rem;
+    }
+</style>

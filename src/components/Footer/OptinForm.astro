@@ -1,0 +1,24 @@
+---
+import submitIcon from '../../images/icons/send_icon.svg'
+---
+
+<form action="#">
+    <input type="email" id="email" name="email" placeholder="Email Address">
+    <button class="submit-btn" type="submit"><img src={submitIcon} alt="submit"></button>
+</form>
+
+<style lang="scss">
+    form {
+        background: #FFFFFF;
+        border: 1px solid #DFDFE6;
+        border-radius: 2.778rem;
+        padding: 0.889rem;
+        width: 100%;
+        display: flex;
+
+        input[type=email] {
+            flex-grow: 1;
+            color: #87898E;
+        }
+    }
+</style>

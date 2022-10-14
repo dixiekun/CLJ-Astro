@@ -1,0 +1,34 @@
+---
+import FooterCol from "./FooterCol.astro";
+
+const links = [
+    'About Us',
+    'Terms of Service',
+    'Privacy Policy',
+    'Sitemap'
+]
+---
+
+<FooterCol heading="Useful Links">
+    <ul>
+        {links.map(link => (
+            <li><a href="/">{link}</a></li>
+        ))}
+    </ul>
+</FooterCol>
+
+
+<style lang="scss">
+    @import '../../styles/colors.scss';
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        li {
+            &:hover {
+              color: $CLJ-Primary-400;  
+            }
+        }
+    }
+</style>

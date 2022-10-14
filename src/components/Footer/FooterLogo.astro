@@ -1,0 +1,17 @@
+---
+import Logo from "../Header/Logo.astro";
+import Copyright from "./Copyright.astro";
+---
+<div class="footer-mark">
+    <Logo footer={true} />
+    <Copyright sitename="cubanlink.jewelry" />
+</div>
+
+<style lang="scss">
+    .footer-mark {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        gap: 1.444rem;
+    }
+</style>

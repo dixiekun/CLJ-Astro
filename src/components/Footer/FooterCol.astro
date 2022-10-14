@@ -1,0 +1,30 @@
+---
+export interface Props {
+    heading: string
+}
+
+const {heading} = Astro.props as Props
+---
+
+<div class="col-item">
+    <h3>{heading}</h3>
+    <slot/>
+</div>
+
+<style lang="scss">
+    @import '../../styles/global.scss';
+
+    .col-item {
+        display: flex;
+        flex-direction: column;
+        gap: 2.222rem;
+    }
+    h3 {
+        color: $CLJ-Primary-400;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.333rem;
+        line-height: 2rem;
+    }
+</style>

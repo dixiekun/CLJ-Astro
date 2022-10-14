@@ -1,0 +1,110 @@
+---
+import ArticleCard from "./ArticleCard.astro";
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+
+const response = await fetch('http://127.0.0.1:3000/posts.json')
+const posts = await response.json()
+
+
+
+  
+---
+
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    {posts.posts
+    .sort((a,b) => b.id - a.id)
+    .map(post => (
+      <>
+        <div class="swiper-slide">
+          <a href="#">
+            <ArticleCard 
+                title={post.title} 
+                imgSrc={post.image}
+                date={post.datePosted}
+                showAuthor={true}
+                author={post.author}
+                showDate={false}
+                showReadmore={false}
+            />
+          </a>
+        </div>
+      </>
+    ))}
+  </div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev">
+    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M28.3128 11.0991L25.8574 8.64709L13.5889 20.9156L25.8574 33.1859L28.3128 30.7322L18.4963 20.9156L28.3128 11.0991Z" fill="currentColor"/>
+    </svg>
+  </div>
+  <div class="swiper-button-next">
+    <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.5879 11.0991L16.0416 8.64709L28.3119 20.9156L16.0416 33.1859L13.5879 30.7322L23.4044 20.9156L13.5879 11.0991V11.0991Z" fill="currentColor"/>
+    </svg> 
+  </div>
+</div>
+
+
+<style lang="scss">
+  .swiper {
+    width: 71.111rem;
+    overflow: visible;
+  }
+  .swiper-slide {
+    width: 22.833rem;
+    height: 23.333rem;
+  }
+
+  .swiper-button-prev {
+    left: -2%;
+  }
+
+  .swiper-button-next {
+    right: -2%;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    background-color: #ffffff;
+    border-radius: 100%;
+    color: #212121;
+    width: 3.333rem;
+    height: 3.333rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    top: unset;
+    bottom: -8%;
+
+    svg {
+      width: 2.314rem;
+      height: 2.314rem;
+    }
+
+    &::before, &::after  {
+      content: none;
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import Swiper, { Navigation } from 'swiper';
+  const swiper = new Swiper('.swiper', {
+    // configure Swiper to use modules
+    modules: [Navigation],
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 24,
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+</script>

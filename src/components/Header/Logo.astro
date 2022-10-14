@@ -1,0 +1,19 @@
+---
+import logoLight from '/logo-light.svg'
+
+export interface Props {
+    siteTitle?: string,
+    footer?: boolean
+}
+
+const {siteTitle, footer=false} = Astro.props as Props
+---
+
+<img class={footer && 'footer-logo'} src={logoLight} alt={siteTitle} >
+
+<style>
+    .footer-logo {
+        width: 8.211rem;
+        height: 8.333rem;
+    }
+</style>

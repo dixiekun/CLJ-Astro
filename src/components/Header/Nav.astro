@@ -1,0 +1,67 @@
+---
+import Button from "../Button.astro";
+import SearchIcon from "./SearchIcon.astro";
+---
+<nav class="nav">
+    <ul>
+        <li id="marker"></li>
+        <li><a href="/">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#">contact</a></li>
+    </ul>
+    <SearchIcon/>
+    <Button style="btn-subscribe" text="subscribe" />
+</nav>
+
+<style lang="scss">
+    @import '../../styles/global.scss';
+
+    nav {
+        display: flex;
+        gap: 2rem;
+        color: white;
+
+        ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+        }
+
+
+        
+
+        a {
+            font-size: 1rem;
+            position: relative;
+
+
+        }
+
+        #marker {
+                position: absolute;
+                height: 2px;
+                width: 2.222rem;
+                background-color: $CLJ-Primary-400;
+                bottom: -8px;
+                transition: all 0.3s ease-in;
+            }
+    }
+</style>
+
+<script>
+    const marker = document.querySelector<HTMLElement>('#marker');
+    const item = document.querySelectorAll('nav ul li a');
+
+    function indicator(e) {
+        marker.style.left = e.offsetLeft+"px";
+        marker.style.width = e.offsetWidth+"px";
+    }
+
+    item.forEach(link => {
+        link.addEventListener('mouseover', (e) =>{
+            indicator(e.target);
+        })
+    })
+
+</script>

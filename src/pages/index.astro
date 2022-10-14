@@ -1,0 +1,71 @@
+---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro"
+import Categories from "../components/Categories/Categories.astro";
+import FavoritePosts from "../components/FavoritePosts.astro";
+import LatestPosts from "../components/LatestPosts.astro";
+//import images
+import homeBG from '../images/home-bg.png'
+import authority from '../images/illustrations/authority.svg'
+import arrowDown from '../images/icons/arrow-down.svg'
+import dots1 from '../images/icons/dots-pattern-1.svg'
+import dots2 from '../images/icons/dots-pattern-2.svg'
+import frontChain from '../images/illustrations/chain-front.svg'
+import backChain from '../images/illustrations/chain-back.svg'
+
+
+const texts = {
+	title: 'Cuban Link Jewelry',
+	pageDescriptioon: 'Latest news and trends for cuban link',
+	cardDescription: 
+	'Your number one source of cuban link jewelry information. We will provide you the latest news and trends about cuban link jewelry.'
+}
+
+const imagesData = [
+	authority,
+	arrowDown,
+	dots1,
+	dots2,
+	frontChain,
+	backChain
+]
+---
+
+<Layout title={texts.title} description={texts.pageDescriptioon}>
+	<Hero 
+		cardTitle={texts.title} 
+		cardDescription={texts.cardDescription} 
+		heroBg={homeBG} 
+		
+	>
+		<img class="absolute right-0 bottom-10 z-10" src={`${imagesData[0]}`} alt="">
+		<img class="absolute right-0 left-0 mx-auto -bottom-28 z-10" src={`${imagesData[1]}`} alt="">
+		<img class="absolute right-0 -bottom-48 z-10" src={`${imagesData[2]}`} alt="">
+		<img class="absolute left-32 -bottom-48" src={`${imagesData[3]}`} alt="">
+		<img class="absolute right-0 -bottom-48 front-chain" src={`${imagesData[4]}`} alt="">
+		<img class="absolute right-0 -bottom-48 back-chain" src={`${imagesData[5]}`} alt="">
+	</Hero>
+	<main>
+		<Categories/>
+		<FavoritePosts/>
+		<LatestPosts/>
+
+	</main>
+
+</Layout>
+
+<style lang="scss">
+	.front-chain {
+		width: 13.889rem;
+		top: 4.25rem;
+		left: -2rem;
+		z-index: 2;
+	}
+
+	.back-chain {
+		width: 6.444rem;
+		top: 6.25rem;
+		left: -2rem;
+		z-index: 0;
+	}
+</style>

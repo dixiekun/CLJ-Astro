@@ -1,0 +1,32 @@
+---
+import FooterCol from "./FooterCol.astro";
+import phoneIcon from '../../images/icons/phone_icon.svg'
+import mailIcon from '../../images/icons/mail_icon.svg'
+
+const heading = 'Contact Us'
+const contactNumb = '123 - 4567 - 8901'
+const contactEmail = 'contact@cubanlink-jewelry.com'
+
+---
+
+<FooterCol heading="Contact Us">
+    <ul>
+        <li><i><img src={`${phoneIcon}`} alt="phone_icon"></i>{contactNumb}</li>
+        <li><i><img src={`${mailIcon}`} alt="mail_icon"></i>{contactEmail}</li>
+    </ul>
+</FooterCol>
+
+<style lang="scss">
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        li {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1.111rem;
+            align-items: center;
+        }
+    }
+</style>

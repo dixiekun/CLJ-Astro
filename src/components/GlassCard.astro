@@ -1,0 +1,23 @@
+<div class="showcase-card">
+    <slot/>
+</div>
+
+<style lang="scss">
+    @import '../styles/global.scss';
+
+    .showcase-card {
+            width: 41.833rem;
+            height: 23.556rem;
+            background: rgba(196, 196, 196, 0.22);
+            border: 1px solid rgba(242, 242, 242, 0.8);
+            backdrop-filter: blur(4px);
+            border-radius: 10px;
+            padding: 2.111rem 3.556rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 6rem;
+            z-index: 1;
+        }
+
+</style>
