@@ -1,9 +1,6 @@
 ---
 import ArticleCard from "./ArticleCard.astro";
-
-const response = await fetch('http://127.0.0.1:3000/posts.json')
-const posts = await response.json()
-
+import posts from '../data/posts.json'
 
 ---
 
@@ -12,7 +9,7 @@ const posts = await response.json()
         <h2>Our Favorite Posts</h2>
         <div class="line-separator"></div>
         <div class="posts-wrapper flex flex-wrap">
-            {posts.posts.filter(featured => featured.featured)
+            { posts.filter(featured => (featured.featured))
             .sort((a,b) => b.id - a.id)
             .map(post => (
                 <>

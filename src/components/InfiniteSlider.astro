@@ -2,20 +2,15 @@
 import ArticleCard from "./ArticleCard.astro";
 import 'swiper/css';
 import 'swiper/css/navigation';
+import posts from '../data/posts.json'
 
 
-const response = await fetch('http://127.0.0.1:3000/posts.json')
-const posts = await response.json()
-
-
-
-  
 ---
 
 
 <div class="swiper">
   <div class="swiper-wrapper">
-    {posts.posts
+    {posts
     .sort((a,b) => b.id - a.id)
     .map(post => (
       <>
