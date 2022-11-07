@@ -1,0 +1,59 @@
+---
+export interface Props {
+    name: string,
+    description: string,
+    profPic: string,
+    signature: string
+}
+
+const {name, description, profPic, signature} = Astro.props as Props
+
+---
+
+<section class="author-box">
+    <div class="container">
+        <div class="wrapper">
+            <img src={profPic} alt="author avatar">
+            <div class="info-text">
+                <img src={signature} alt="" class="author-sign">
+                <h3>{name}</h3>
+                <p>{description}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .author-box {
+        .container {
+
+            .wrapper {
+                background: #FFFFFF;
+                border: 1px solid #F9C967;
+                border-radius: 10px;
+                padding: 48px;
+                display: flex;
+                gap: 64px;
+
+                .info-text {
+                    display: grid;
+                    gap: 16px;
+
+                    h3 {
+                        font-family: 'Emblema One';
+                        font-size: 40px;
+                        line-height: 48px;
+                    }
+
+                    p {
+                        color: #626262;
+                    }
+
+                    img.author-sign {
+                        margin-left: 6rem;
+                    }
+                }
+            }
+        }
+    }
+</style>

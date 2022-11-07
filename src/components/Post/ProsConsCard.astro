@@ -1,0 +1,43 @@
+---
+export enum Title {
+    PROS = 'Pros',
+    CONS = 'Cons',
+}
+
+export interface Props {
+    title: Title,
+
+}
+
+const {title} = Astro.props as Props
+---
+
+<article class={title == Title.PROS ? 'pros' : 'cons'}>
+    <h3>{title}</h3>
+    <ul>
+        <slot/>
+    </ul>
+</article>
+
+<style lang="scss">
+    article.pros, article.cons {
+        width: 515px;
+        height: 588px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 6px rgb(0 0 0 / 8%);
+        border-radius: 0.556rem;
+        padding: 2.222rem 1.778rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.222rem;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2.222rem;
+        }
+    }
+
+
+</style>

@@ -12,11 +12,14 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^2.0.2",
+    "@astrojs/vue": "^1.2.0",
     "astro": "^1.4.7",
     "swiper": "^8.4.4",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.1.8",
+    "vue": "^3.2.41"
   },
   "devDependencies": {
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "swup": "^2.0.19"
   }
 }

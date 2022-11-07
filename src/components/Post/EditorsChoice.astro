@@ -1,0 +1,63 @@
+---
+export interface Props {
+    name: string,
+    description: string,
+    image: string
+}
+
+const {name, image, description} = Astro.props as Props
+---
+
+<section class="editor-choice">
+    <div class="container card">
+        <img width="256" src="/stars.svg" alt="stars crown" class="stars mb-10">
+        <h2>Editor's Choice</h2>
+        <div class="line-separator"></div>
+        <article class="choosen">
+            <div class="heading">          
+                <h3>{name}</h3>
+                <p class="description">{description}</p>
+            </div>
+            <img src={image} alt="name">
+            <button class="primary-btn">See the latest price</button>
+        </article>
+    </div>
+
+</section>
+
+<style lang="scss">
+    @import '../../styles/colors.scss';
+
+    .editor-choice {
+        .card {
+            background: #FFFFFF;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+            border-radius: 10px;
+            padding: 48px;
+            flex-direction: column;
+            align-items: center;
+
+            h2 {
+                color: $CLJ-Primary-400;
+                text-transform: uppercase;
+            }
+
+            article.choosen {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+                padding-bottom: 2rem;
+
+                p {
+                    color: #444444;
+                }
+
+                h3 {
+                    font-family: "Georgia";
+                }
+            }
+        }
+    }
+
+</style>

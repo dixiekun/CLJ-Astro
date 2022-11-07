@@ -1,0 +1,113 @@
+<section class="review-summary">
+    <div class="summary-container">
+        <h3>Editor's Top Picks</h3>
+        <ul>
+            <li class="product-blurb">
+                <div class="left">                    
+                    <img width="108" src="/images/sample/1-small.png" alt="sample 1">
+                    <div class="info-wrapper">
+                        <h4>KRKC&CO Cuban Link Chain for Men</h4>
+                        <p>14k Gold 2mm/18mm/15mm Hip Hop Jewelry</p>
+                    </div>
+                </div>
+                <button class="ghost-btn">See the latest price</button>
+            </li>
+            <li class="product-blurb">
+                <div class="left">                    
+                    <img width="108" src="/images/sample/2-small.png" alt="sample 1">
+                    <div class="info-wrapper">
+                        <h4>Cuban Curb Link Chain Necklace- Made In Italy</h4>
+                        <p>8K Solid Gold 1.8MM, 2.5MM, 3MM, 3.8MM, 4.5MM, 5.5MM, 7MM</p>
+                    </div>
+                </div>
+                <button class="ghost-btn">See the latest price</button>
+            </li>
+            <li class="product-blurb">
+                <div class="left">                    
+                    <img width="108" src="/images/sample/3-small.png" alt="sample 1">
+                    <div class="info-wrapper">
+                        <h4>KRKC&CO Cuban Link Chain for Men</h4>
+                        <p>14k Gold 2mm/18mm/15mm Hip Hop Jewelry</p>
+                    </div>
+                </div>
+                <button class="ghost-btn">See the latest price</button>
+            </li>
+        </ul>
+        <div class="summary-content">
+            <p>This is a quick overview article before the actual specifics review of the product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lectus risus tempor mi. Gravida volutpat potenti varius tellus in sit aenean est. Nunc, ac nulla amet cursus. Quis eu dolor volutpat facilisis leo ante.</p>
+            <p>Eget velit sit semper faucibus venenatis arcu. At euismod in gravida nisi. Aliquam lectus molestie aenean sed consequat vitae cras auctor nisl. Sed integer mi sem ut dignissim imperdiet. Vestibulum a lectus vitae potenti tortor maecenas. At nunc sit est magna vitae, ultrices in ut. Lectus malesuada risus vestibulum sollicitudin turpis risus convallis. Fringilla non, molestie eu sagittis vehicula placerat.</p>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    .review-summary {
+        display: grid;
+        place-items: center;
+
+        .summary-container {
+            display: flex;
+            flex-direction: column;
+            width: 44.111rem;
+            max-width: 100%;
+            align-items: center;
+            gap: 3.556rem;
+
+            h3 {
+                font-family: "Georgia";
+                text-transform: uppercase;
+
+            }
+
+            ul {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 2.222rem;
+
+
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .left {
+                        display: flex;
+                        gap: 20px;
+                        align-items: center;
+                    }
+
+                    img {
+                        border-radius: 10px;
+                        overflow: hidden;
+                        height: 108px;
+                    }
+
+                    .info-wrapper {
+                        max-width: 16.056rem;
+                        height: 6rem;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        h4 {
+                            font-weight: bold;
+                        }
+                        p {
+                            font-size: 16px;
+                            color: #444444;
+                        }
+                    }
+
+                }
+            }
+
+            .summary-content {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    }
+
+</style>

@@ -15,7 +15,7 @@ import posts from '../data/posts.json'
     .map(post => (
       <>
         <div class="swiper-slide">
-          <a href="#">
+          <a href={`/${post.title.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}`}>
             <ArticleCard 
                 title={post.title} 
                 imgSrc={post.image}

@@ -2,9 +2,7 @@
     <slot/>
 </div>
 
-<style lang="scss">
-    @import '../styles/global.scss';
-
+<style is:global>
     .showcase-card {
             width: 41.833rem;
             height: 23.556rem;
@@ -19,5 +17,11 @@
             margin-top: 6rem;
             z-index: 1;
         }
+
+    .single-post .showcase-card {
+        width: 44.111rem;
+        height: 27.111rem;
+        gap: 1.778rem;
+    }
 
 </style>

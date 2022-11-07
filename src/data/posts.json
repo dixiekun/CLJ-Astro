@@ -6,7 +6,9 @@
             "image": "/images/posts/1.png",
             "datePosted": "04-02-2022",
             "author": "Racquel Rivarez",
-            "featured":true
+            "featured":true,
+            "category": "buying guide",
+            "avatar": "/images/avatars/rr.png"
         },
         {
             "id": 2,
@@ -15,16 +17,20 @@
             "image": "/images/posts/2.png",
             "datePosted": "04-04-2022",
             "author": "Racquel Rivarez",
-            "featured":true
+            "featured":true,
+            "category": "deals",
+            "avatar": "/images/avatars/rr.png"
         },
         {
             "id": 3,
-            "title": "How Much for a Cuban Link Chain: Our Top Choices For Any Budget",
+            "title": "How Much for a Cuban Link Chain: Our Top Choices For Any Budget Part One",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "image": "/images/posts/3.png",
             "datePosted": "05-04-2022",
             "author": "Racquel Rivarez",
-            "featured":true
+            "featured":true,
+            "category": "latest trends",
+            "avatar": "/images/avatars/rr.png"
         },
         {
             "id": 4,
@@ -33,7 +39,9 @@
             "image": "/images/posts/4.png",
             "datePosted": "05-21-2022",
             "author": "Racquel Rivarez",
-            "featured":true
+            "featured":true,
+            "category": "gold",
+            "avatar": "/images/avatars/rr.png"
         },
         {
             "id": 5,
@@ -42,7 +50,9 @@
             "image": "/images/posts/5.png",
             "datePosted": "06-02-2022",
             "author": "Racquel Rivarez",
-            "featured":true
+            "featured":true,
+            "category": "buying guide",
+            "avatar": "/images/avatars/rr.png"
         },
         {
             "id": 6,
@@ -51,7 +61,9 @@
             "image": "/images/posts/6.png",
             "datePosted": "06-08-2022",
             "author": "Racquel Rivarez",
-            "featured":true
+            "featured":true,
+            "category": "deals",
+            "avatar": "/images/avatars/rr.png"
         },
         {
             "id": 7,
@@ -60,7 +72,9 @@
             "image": "/images/posts/7.png",
             "datePosted": "07-08-2022",
             "author": "Racquel Rivarez",
-            "featured":true
+            "featured":true,
+            "category": "latest trends",
+            "avatar": "/images/avatars/rr.png"
         },
         {
             "id": 8,
@@ -69,7 +83,9 @@
             "image": "/images/posts/8.png",
             "datePosted": "07-18-2022",
             "author": "Racquel Rivarez",
-            "featured":true
+            "featured":true,
+            "category": "gold",
+            "avatar": "/images/avatars/rr.png"
         },
         {
             "id": 9,
@@ -78,7 +94,9 @@
             "image": "/images/posts/9.png",
             "datePosted": "08-10-2022",
             "author": "Racquel Rivarez",
-            "featured":false
+            "featured":false,
+            "category": "buying guide",
+            "avatar": "/images/avatars/rr.png"
         }
         
     ]

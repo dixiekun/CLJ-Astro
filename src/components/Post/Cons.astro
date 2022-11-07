@@ -1,0 +1,16 @@
+---
+import ProsConsCard, { Title } from "./ProsConsCard.astro";
+import consIcon from '../../images/icons/cons_icon.svg'
+
+const consData = [
+    'Miami Cuban link necklaces come in gold, white gold, sterling silver, and stainless steel.',
+    'Miami Cuban link necklaces come in gold, white gold, sterling silver, and stainless steel.',
+    'Miami Cuban link necklaces come in gold, white gold, sterling silver, and stainless steel.',
+]
+
+---
+<ProsConsCard title={Title.CONS}>
+    {consData.map(pro => (
+        <li><img src={consIcon} alt="cons-icon"/>{pro}</li>
+    ))}
+</ProsConsCard>

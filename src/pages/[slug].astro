@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import posts from '../data/posts.json'
+import Hero from '../components/Hero.astro';
+import ReviewSummary from '../components/Post/ReviewSummary.astro';
+import ProductReview from '../components/Post/ProductReview.astro';
+import Conclusion from '../components/Post/Conclusion.astro';
+import EditorsChoice from '../components/Post/EditorsChoice.astro';
+import authority from '../images/illustrations/authority.svg'
+import dots2 from '../images/icons/dots-pattern-2.svg'
+import frontChain from '../images/illustrations/chain-front.svg'
+import backChain from '../images/illustrations/chain-back.svg'
+import AuthorBox from '../components/Post/AuthorBox.astro';
+import CommentsApp from '../components/Comments/CommentsApp.vue'
+
+export async function getStaticPaths() {
+    return posts.map(post => ({
+        params: {
+            slug: post.title.toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, '')
+            .replace(/[\s_-]+/g, '-')
+            .replace(/^-+|-+$/g, '')
+        }, 
+        props: {
+            post
+        }
+    }))
+}
+
+const {title, description, datePosted, image, author, avatar } = Astro.props.post
+
+const content = 
+    `This is the conclusion review of the product. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lectus risus tempor mi. Gravida volutpat potenti varius tellus in sit aenean est. Nunc, ac nulla amet cursus. Quis eu dolor volutpat facilisis leo ante. Eget velit sit semper faucibus venenatis arcu. At euismod in gravida nisi. Aliquam lectus molestie aenean sed consequat vitae cras auctor nisl. Sed integer mi sem ut dignissim imperdiet. Vestibulum a lectus vitae potenti tortor maecenas. At nunc sit est magna vitae, ultrices in ut. Lectus malesuada risus vestibulum sollicitudin turpis risus convallis. Fringilla non, molestie eu sagittis vehicula placerat.`
+---
+
+<Layout title={title} description={description}>
+    <Hero singlePost={true} cardTitle={title} cardDescription={description} heroBg={image}>
+        <div class="card_footer">
+            <div class="left">            
+                <img height="60" width="60" src={avatar} alt={author} />
+                <div class="text-container">            
+                    <p class="author">{author}</p>
+                    <p class="date">{new Date(datePosted).toDateString().split(' ').slice(1).join(' ')}</p>  
+                </div>
+            </div>
+
+            <div class="right">
+                <button class="share"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3 24.5C4.365 17.9919 8.14312 11.5081 17.625 10.1919V5L27.375 14.0919L17.625 23.2081V17.87C10.8488 17.87 6.38812 19.9419 3 24.5Z" fill="currentColor"/>
+                    </svg>
+                    </button>
+            </div>
+        </div>
+        <img slot="arts" class="absolute -right-40 bottom-10 z-0 opacity-5" src={authority} alt=""/>
+        <img slot="arts" class="absolute left-5 -bottom-48" src={dots2} alt=""/>
+        <img slot="arts" class="absolute right-0 -bottom-48 front-chain" src={frontChain} alt=""/>
+		<img slot="arts" class="absolute right-0 -bottom-48 back-chain" src={backChain} alt=""/> 
+    </Hero>
+    <ReviewSummary/>
+    <ProductReview title="KRKC&CO Cuban Link Chain for Men" image="/images/sample/1.png"/>
+    <ProductReview title="Cuban Curb Link Chain Necklace- Made In Italy" image="/images/sample/2.png"/>
+    <ProductReview title="KRKC&CO Cuban Link Chain for Men" image="/images/sample/3.png"/>
+    <Conclusion content={content} />
+    <EditorsChoice name="KRKC&CO Cuban Link Chain for Men" description="14k Gold 2mm/18mm/15mm Hip Hop Jewelry" image="/images/sample/1.png"/>
+    <AuthorBox 
+        name="Racquel Rivarez" 
+        description="Lead content writer @ cubanlink.jewelry | Good vibes enthusiast. Filipino born and raised. Reach me at www.RacquelRivarez.studio."
+        profPic="/images/avatars/rr_large.png"
+        signature="/images/avatars/rr_signature.png"
+    />
+    
+</Layout>
+
+<style lang="scss">
+    @import '../styles/colors.scss';
+
+    .card_footer {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        align-items: center;
+        margin-top: auto;
+    }
+
+    .left {
+        display: flex;
+        gap: 12px;
+
+        .author {
+            color: $CLJ-Primary-400;
+            font-weight: bold;
+        }
+
+        .date {
+            font-size: 16px;
+            color: #AAAAAA;
+        }
+    }
+
+    .front-chain {
+        width: 9.722rem;
+        top: 4.75rem;
+        left: 12.5rem;
+        z-index: 2;
+    }
+
+    .back-chain {
+        width: 4.5rem;
+        top: 6.5rem;
+        left: 12.25rem;
+        z-index: 0;
+    }
+
+    
+</style>

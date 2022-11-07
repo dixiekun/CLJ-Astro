@@ -6,28 +6,30 @@ export interface Props {
     cardTitle: string,
     cardDescription: string,
     heroBg: string,
-    art?: string[],
+    singlePost?: boolean,
 }
 
-const {cardTitle, cardDescription, heroBg, art} = Astro.props as Props
+const {cardTitle, cardDescription, heroBg, singlePost=false} = Astro.props as Props
 
 ---
 
 
-<section class="hero mt-0" style={`background-image: url(${heroBg})`}>
+<section class={singlePost? 'mt-0 single-post' : 'hero mt-0'} style={`background-image: url(${heroBg})`}>
     <div class="container relative">
         <GlassCard >
             <h1>{cardTitle}</h1>
             <p>{cardDescription}</p>
+            <slot />
         </GlassCard>
-        <slot />
+        <slot name="arts" />
+        
     </div>
 </section>
 
-<style lang="scss">
+<style lang="scss" >
      @import '../styles/global.scss';
 
-    .hero {
+    .hero, .single-post {
         width: 100%;
         background-size: cover;
         height: 46.222rem;
@@ -50,5 +52,24 @@ const {cardTitle, cardDescription, heroBg, art} = Astro.props as Props
         font-size: 1.111rem;
         line-height: 1.556rem;
         max-width: 24.333rem;
+    }
+
+    .single-post {
+        box-shadow: inset 0 0 0 100vmax rgb(14 14 14 / 84%);
+
+        .container {
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 2.222rem;
+            line-height: 2.667rem;
+            letter-spacing: -0.05em;
+            text-transform: capitalize;
+        }
+
+        p {
+            max-width: 100%;
+        }
     }
 </style>

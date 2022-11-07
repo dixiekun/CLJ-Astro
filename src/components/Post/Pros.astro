@@ -1,0 +1,29 @@
+---
+import ProsConsCard, { Title } from "./ProsConsCard.astro";
+import prosIcon from '../../images/icons/pros_icon.svg'
+
+
+const prosData = [
+    'Miami Cuban link necklaces come in gold, white gold, sterling silver, and stainless steel.',
+    'They don’t only look stunning, they can also hold real value for a long time.',
+    'It is a versatile piece of jewelry that goes with any style.',
+    'Miami Cuban link necklaces come in gold, white gold, sterling silver, and stainless steel.'
+]
+
+---
+<ProsConsCard title={Title.PROS}>
+    {prosData.map(pro => (
+        <li><img src={prosIcon} alt="pros-icon"/>{pro}</li>
+    ))}
+</ProsConsCard>
+
+<style lang="scss" is:global>
+    article.pros, article.cons {
+            li {
+            display: flex;
+            gap: 1rem;
+            color: #202020;
+        }
+    }
+
+</style>

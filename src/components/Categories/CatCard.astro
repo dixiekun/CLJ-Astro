@@ -8,16 +8,18 @@ export interface Props {
 }
 
 const {title, imageUrl, description} = Astro.props as Props
+
+
 ---
-<a href="#">
-<div class="category-card">
-        <div class="blur"></div>
-        <img class="dashline" src={dashline} alt="">
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <img src={imageUrl} alt={title}>
-</div>
-</a>
+<button>
+    <div class="category-card">
+            <div class="blur"></div>
+            <img class="dashline" src={dashline} alt="">
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <img src={imageUrl} alt={title}>
+    </div>
+</button>
 <style lang="scss">
     .category-card {
         border: 1px solid #F9F9F9;
@@ -93,3 +95,7 @@ const {title, imageUrl, description} = Astro.props as Props
         }
     }
 </style>
+
+<script>
+
+</script>

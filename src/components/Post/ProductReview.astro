@@ -1,0 +1,68 @@
+---
+import Pros from './Pros.astro';
+import Cons from './Cons.astro';
+export interface Props {
+    title: string,
+    image: string
+}
+
+const {title, image} = Astro.props as Props
+---
+
+
+<section class="product-review">
+    <div class="container flex-col ">
+        <article>
+            <h2>{title}</h2>
+            <div class="content">
+                <div class="text">
+                    <p>Like watches, they come in exquisite pieces. We love this Cuban Link Necklace that comes with a dainty box. Small gifts that you can wrap and place into a small box is always great for both mini and big surprises.<br>
+                        <br>
+                        But many other gifts come in pretty little boxes, so what is unique about a Miami Cuban link necklace?<br>
+                        <br>
+                        Like watches, they come in exquisite pieces. We love this Cuban Link Necklace that comes with a dainty box.<br>
+                        <br>
+                        Small gifts that you can wrap and place into a small box is always great for both mini and big surprises. But many other gifts come in pretty little boxes, so what is unique about a Miami Cuban link necklace?
+                    </p>
+                </div>
+                <img src={image} alt="sample">
+            </div>
+        </article>
+        <div class="wrapper">
+            <Pros/>
+            <Cons/>
+        </div>
+        <button class="primary-btn">See the latest price</button>
+        
+    </div>
+
+
+</section>
+
+<style lang="scss">
+
+    .product-review {
+        margin-top: 8.889rem;
+        
+        .container {
+            border-bottom: 1px solid #d3d3d3;
+            padding-bottom: 4rem;
+        }
+    }
+    .content {
+        display: flex;
+        gap: 4.444rem;
+        margin-top: 3rem;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 4rem;
+    }
+
+    .primary-btn {
+        margin-top: 4rem;
+        align-self: center;
+    }
+</style>

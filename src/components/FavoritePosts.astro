@@ -13,11 +13,13 @@ import posts from '../data/posts.json'
             .sort((a,b) => b.id - a.id)
             .map(post => (
                 <>
+                    <a href={`/${post.title.toLowerCase().trim().replace(/[^\w\s-]/g, '').replace(/[\s_-]+/g, '-').replace(/^-+|-+$/g, '')}`}>
                     <ArticleCard 
                         title={post.title} 
                         imgSrc={post.image}
                         date={post.datePosted}
                     />
+                    </a>
                 </>
             )).slice(0, 8)}
         </div>

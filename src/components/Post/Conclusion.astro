@@ -1,0 +1,14 @@
+---
+export interface Props {
+    content: string
+}
+
+const {content} = Astro.props as Props
+---
+
+<section class="conclusion">
+    <div class="container flex-col">
+        <h2>Conclusion</h2>
+        <p class="mt-8">{content}</p>
+    </div>
+</section>
